@@ -6,13 +6,15 @@ package it.cs.unicam.progettomadeinitaly.api.contents;
  */
 public interface Contents {
 
-    // TODO possibile aggiunta di ID
+    int getId();
 
     String getName();
 
     String getDescription();
 
     boolean isPublished();
+
+    void publish();
 
     String getAuthor();
 
