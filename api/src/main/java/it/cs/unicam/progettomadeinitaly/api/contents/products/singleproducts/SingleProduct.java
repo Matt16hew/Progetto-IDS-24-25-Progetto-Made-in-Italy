@@ -3,7 +3,7 @@ package it.cs.unicam.progettomadeinitaly.api.contents.products.singleproducts;
 import it.cs.unicam.progettomadeinitaly.api.contents.products.Product;
 
 /**
- * Represents a unitary product
+ * Represents a unitary product in the supply chain
  * @author Alessandro Pascucci
  */
 public abstract class SingleProduct extends Product {
@@ -16,8 +16,8 @@ public abstract class SingleProduct extends Product {
 
     private String variety;
 
-    public SingleProduct(String author, String name, String description, String certification, String variety) {
-        super(author);
+    public SingleProduct(int id, String author, String name, String description, String certification, String variety) {
+        super(id, author);
         if (name == null)
             throw new NullPointerException("A single product must have a name");
         if (description == null)
@@ -32,20 +32,22 @@ public abstract class SingleProduct extends Product {
         this.variety = variety;
     }
 
+    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
+    @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
     public String getCertification() {
-        return certification;
+        return this.certification;
     }
 
     public String getVariety() {
-        return variety;
+        return this.variety;
     }
 
     // Inserisco setter
@@ -57,6 +59,7 @@ public abstract class SingleProduct extends Product {
     public void setDescription(String description) {
         this.description = description;
     }
+
     public void setCertification(String certification) {
         this.certification = certification;
     }

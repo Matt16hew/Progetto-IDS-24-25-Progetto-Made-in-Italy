@@ -11,8 +11,11 @@ import java.util.List;
 public class TransformationPhase {
 
     private String name;
+
     private String description;
+
     private String certification;
+
     private List<Producer> producers;
 
     public TransformationPhase(String name, String description, String certification) {
@@ -23,23 +26,35 @@ public class TransformationPhase {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
     public String getCertification() {
-        return certification;
+        return this.certification;
     }
 
     public List<Producer> getProducers() {
-        return producers;
+        return this.producers;
     }
 
-    public void addProducer(Producer producer) {
-        producers.add(producer);
+    public boolean addProducts(List<Producer> producers) {
+        if(producers == null)
+            throw new NullPointerException("Cannot add null producers");
+        if (producers.isEmpty())
+            throw new IllegalArgumentException("Cannot add an empty list to producers");
+        for (Producer producer : producers)
+            this.addProducer(producer);
+        return true;
+    }
+
+    public boolean addProducer(Producer producer) {
+        if (producer == null)
+            throw new NullPointerException("Cannot add null producers");
+        return this.producers.add(producer);
     }
 
 }

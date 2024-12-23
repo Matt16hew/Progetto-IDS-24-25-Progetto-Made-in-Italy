@@ -1,6 +1,6 @@
 package it.cs.unicam.progettomadeinitaly.api.contents.products;
 
-import it.cs.unicam.progettomadeinitaly.api.contents.Contents;
+import it.cs.unicam.progettomadeinitaly.api.contents.Content;
 
 // TODO possibile introduzione dei setter per snellire i parametri del costruttore
 
@@ -8,7 +8,7 @@ import it.cs.unicam.progettomadeinitaly.api.contents.Contents;
  * Represents a product in the supply chain
  * @author Alessandro Pascucci
  */
-public abstract class Product implements Contents {
+public abstract class Product implements Content {
 
     private boolean published;
     // TODO review autore final???

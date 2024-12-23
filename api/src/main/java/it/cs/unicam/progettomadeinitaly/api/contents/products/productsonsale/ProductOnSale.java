@@ -3,53 +3,49 @@ package it.cs.unicam.progettomadeinitaly.api.contents.products.productsonsale;
 import it.cs.unicam.progettomadeinitaly.api.contents.products.Product;
 
 /**
+ * Represents a product on sale in the supply chain
+ * @param <T> The type of product that will be set on sale </T>
  * @author Alessandro Pascucci
  */
 public abstract class ProductOnSale<T extends Product> extends Product {
 
-    protected T product;
+    protected T productSetOnSale;
 
     private float price;
 
     private int quantity;
 
-    public ProductOnSale(String author, T product, float price, int quantity) {
-        super(author);
-        // Works only at runtime
-        // TODO forse non serve perchè nei decorator concreti passiamo direttamente un prodotto non in vendita, ma possiamo lasciarlo per rendere sicura la estensione
+    public ProductOnSale(int id, String author, T product, float price, int quantity) {
+        super(id, author);
+        if (product == null)
+            throw new NullPointerException("Product cannot be null");
         if (ProductOnSale.class.isAssignableFrom(product.getClass()))
             throw new IllegalArgumentException("Product of type ProductOnSale is not allowed.");
-        this.product = product;
+        if (price <= 0.0)
+            throw new IllegalArgumentException("Price cannot be negative or 0");
+        if (quantity < 0)
+            throw new IllegalArgumentException("Quantity cannot be negative");
+        this.productSetOnSale = product;
         this.price = price;
         this.quantity = quantity;
     }
 
     @Override
     public String getName() {
-        return this.product.getName();
+        return this.productSetOnSale.getName();
     }
 
     @Override
     public String getDescription() {
-        return this.product.getDescription();
-    }
-
-    @Override
-    public String getAuthor() {
-        return this.product.getAuthor();
-    }
-
-    @Override
-    public boolean isPublished() {
-        return super.isPublished();
+        return this.productSetOnSale.getDescription();
     }
 
     public float getPrice() {
-        return price;
+        return this.price;
     }
 
     public int getQuantity() {
-        return quantity;
+        return this.quantity;
     }
 
     // Inserisco i setter
@@ -59,7 +55,7 @@ public abstract class ProductOnSale<T extends Product> extends Product {
     }
 
     public void setProduct(T product) {
-        this.product = product;
+        this.productSetOnSale = product;
     }
 
 }

@@ -3,24 +3,25 @@ package it.cs.unicam.progettomadeinitaly.api.contents.products.productsonsale;
 import it.cs.unicam.progettomadeinitaly.api.contents.products.singleproducts.RawProduct;
 
 /**
+ * Represents a raw product on sale in the supply chain
  * @author Alessandro Pascucci
  */
 public class RawProductOnSale extends ProductOnSale<RawProduct> {
 
-    public RawProductOnSale(String author, RawProduct rawProduct, float price, int quantity) {
-        super(author, rawProduct, price, quantity);
+    public RawProductOnSale(int id, String author, RawProduct rawProduct, float price, int quantity) {
+        super(id, author, rawProduct, price, quantity);
     }
 
     public String getCertification() {
-        return this.product.getCertification();
+        return this.productSetOnSale.getCertification();
     }
 
     public String getVariety() {
-        return this.product.getVariety();
+        return this.productSetOnSale.getVariety();
     }
 
     public String getProductionMethod() {
-        return this.product.getProductionMethod();
+        return this.productSetOnSale.getProductionMethod();
     }
 
 }
