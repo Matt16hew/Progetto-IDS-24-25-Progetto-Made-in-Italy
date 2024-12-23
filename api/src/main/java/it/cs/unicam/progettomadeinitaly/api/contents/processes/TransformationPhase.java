@@ -19,6 +19,12 @@ public class TransformationPhase {
     private List<Producer> producers;
 
     public TransformationPhase(String name, String description, String certification) {
+        if (name == null)
+            throw new NullPointerException("A transformation phase must have a name");
+        if (description == null)
+            throw new NullPointerException("A transformation phase must have a description");
+        if (certification == null)
+            throw new NullPointerException("A transformation phase must have a certification");
         this.name = name;
         this.description = description;
         this.certification = certification;

@@ -1,7 +1,7 @@
 package it.cs.unicam.progettomadeinitaly.api.contents;
 
 /**
- *  This interface represent content
+ *  This interface represents a content in the supply chain
  *  @author Alessandro Pascucci
  */
 public interface Content {

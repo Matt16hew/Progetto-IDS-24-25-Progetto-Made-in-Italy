@@ -73,5 +73,4 @@ public class TransformationProcess implements Content {
         return this.phasesOfTransformation;
     }
 
-
 }
