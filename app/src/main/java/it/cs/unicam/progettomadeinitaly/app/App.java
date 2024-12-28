@@ -4,6 +4,102 @@
 package it.cs.unicam.progettomadeinitaly.app;
 
 public class App {
+
     public static void main(String[] args) {
+
+        // TODO JUNIT5 class with this stuff
+
+        /**
+
+        // This is just a test non vedo nessun problema, agente, e lei?
+
+        RawProduct rp = new RawProduct(0,"Pippo che fa le pippe",
+                "Foglia di coca","Di alta qualità, fuma buono fuma a scrocco fuma solo Marocco",
+                "IGP", "Marocchina", "chiedi a Sergio");
+
+        TransformedProduct tp = new TransformedProduct(1, "Giuse", "Coca non cola",
+                "buona buona", "IGP", "Marocco");
+
+        ProductPackage pp = new ProductPackage(2,"Alberto", "Esperienza mistica",
+                "divertiti");
+
+        TransformationProcess trap = new TransformationProcess(3,
+                "Lavorazione di una foglia molto bella", "tanto lavoro",
+                "Sergio", null);
+
+        // Setting transformation process for tp
+        tp.setTransformationProcess(trap);
+
+        // Adding products to pp
+        pp.addProduct(rp);
+        pp.addProduct(tp);
+
+        // Products on sale
+
+        RawProductOnSale rpos = new RawProductOnSale(4, "TestAuthor1", rp, 2.34f, 10);
+        TransformedProductOnSale tpos = new TransformedProductOnSale(5, "TestAuthor2", tp, 12.89f, 12);
+        ProductPackageOnSale ppos = new ProductPackageOnSale(6, "TestAuthor3", pp, 6.35f, 9);
+
+        // Supply Chain Point test
+        ISupplyChainPoint scp = new SupplyChainPoint
+                (0, "Breaking Bad.srl", new Coordinate(0.0,0.0));
+
+        boolean result1 = scp.addBusinessSpecialization(new ProductionSpecialization());
+        boolean result2 = scp.addBusinessSpecialization(new TransformationSpecialization());
+        boolean result3 = scp.addBusinessSpecialization(new DistributionSpecialization());
+        boolean result4 = scp.addBusinessSpecialization(new ResaleSpecialization());
+
+        System.out.println(result1 & result2 & result3 & result4);
+
+        // Adding content
+
+        boolean result5 = scp.getBusinessSpecializationByName
+                (DefaultSpecializationNames.PRODUCTION_SPECIALIZATION.getName()).addContent(rp);
+
+        boolean resultX = scp.getBusinessSpecializationByName
+                ("PRODUCTION_SPECIALIZATION").addContent(rp);
+        boolean resultY = scp.getBusinessSpecializationByName
+                ("production_specialization").addContent(rp);
+
+        boolean result6 = scp.getBusinessSpecializationByName
+                (DefaultSpecializationNames.TRANSFORMATION_SPECIALIZATION.getName()).addContent(trap);
+        boolean result7 = scp.getBusinessSpecializationByName
+                (DefaultSpecializationNames.TRANSFORMATION_SPECIALIZATION.getName()).addContent(tp);
+
+        boolean result8 = scp.getBusinessSpecializationByName
+                (DefaultSpecializationNames.DISTRIBUTION_SPECIALIZATION.getName()).addContent(rp);
+        boolean result9 = scp.getBusinessSpecializationByName
+                (DefaultSpecializationNames.DISTRIBUTION_SPECIALIZATION.getName()).addContent(tp);
+        boolean result10 = scp.getBusinessSpecializationByName
+                (DefaultSpecializationNames.DISTRIBUTION_SPECIALIZATION.getName()).addContent(pp);
+
+        boolean result11 = scp.getBusinessSpecializationByName
+                (DefaultSpecializationNames.RESALE_SPECIALIZATION.getName()).addContent(rpos);
+        boolean result12 = scp.getBusinessSpecializationByName
+                (DefaultSpecializationNames.RESALE_SPECIALIZATION.getName()).addContent(tpos);
+        boolean result13 = scp.getBusinessSpecializationByName
+                (DefaultSpecializationNames.RESALE_SPECIALIZATION.getName()).addContent(ppos);
+
+        System.out.println(result5 & resultX & result6 & result7 & result8 & result9
+                & result10 & result11 & result12 & result13);
+
+        ResaleSpecialization resaleGet = (ResaleSpecialization) scp.getBusinessSpecializationByName(
+                DefaultSpecializationNames.RESALE_SPECIALIZATION.getName());
+
+        // Raw test to see if products are what they are supposed to be
+        List<ProductOnSale<? extends Product>> productsOnSale = resaleGet.getProductsOnSale();
+        for (ProductOnSale<?> p : productsOnSale) {
+            System.out.println("name: " + p.getName());
+            if (p instanceof RawProductOnSale)
+                System.out.println("meth: " + ((RawProductOnSale) p).getProductionMethod());
+            if (p instanceof TransformedProductOnSale)
+                System.out.println("proc: " + ((TransformedProductOnSale) p).getTransformationProcess());
+            if (p instanceof ProductPackageOnSale)
+                System.out.println("prodi: " + ((ProductPackageOnSale) p).getProducts());
+        }
+
+        */
+
     }
 }
+
